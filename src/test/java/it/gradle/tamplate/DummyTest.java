@@ -4,19 +4,10 @@
 package it.gradle.tamplate;
 
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class DummyTest {
-	
-	private Main main;
-    
-	public class MainTest {
-	
-		@Test public void mainStartTest() {
-			main = new Main();
-			assertNotNull(main.getPrimaryStage());
-			
-		}
-	}
+    @Test public void testDummy() {
+        assertTrue(true);
+    }
 }
