@@ -14,9 +14,9 @@ import org.junit.Assert;
 
 
 @RunWith(JavaFxJUnit4ClassRunner.class)
-public class DummyTest {
+public class MainTest {
 	Main main;
-    @Test public void testDummy() {
+    @Test public void startTest() {
         main = new Main();
 		try {
 			main.start(new Stage());
