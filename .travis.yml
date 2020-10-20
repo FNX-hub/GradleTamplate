@@ -2,13 +2,14 @@ language: java
 jdk:
  - openjdk13
  # add other jdk here
-install: skip
+install: true
 
 
 before_install:
  - sudo apt update
  - sudo apt install openjfx
  - chmod +x gradlew   # add exe permission to graglew
+ - export DISPLAY=:99.0
  
 # good for performances
 before_cache:
