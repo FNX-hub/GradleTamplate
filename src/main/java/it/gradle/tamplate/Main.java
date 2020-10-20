@@ -15,7 +15,7 @@ public class Main extends Application {
     private BorderPane rootLayout;
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("AddressApp");
 
@@ -26,45 +26,38 @@ public class Main extends Application {
     
     /**
      * Initializes the root layout.
+     * @throws IOException 
      */
-    public void initRootLayout() {
-        try {
-            // Load root layout from fxml file.
-            rootLayout = FXMLLoader.load(getClass().getResource("/RootLayout.fxml"));
-            
-            // Show the scene containing the root layout.
-            Scene scene = new Scene(rootLayout);
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void initRootLayout() throws IOException {
+        // Load root layout from fxml file.
+        rootLayout = FXMLLoader.load(getClass().getResource("/RootLayout.fxml"));
+        
+        // Show the scene containing the root layout.
+        Scene scene = new Scene(rootLayout);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     /**
      * Shows the person overview inside the root layout.
      */
-    public void showPersonOverview() {
-        try {
-            // Load person overview.
-            AnchorPane personOverview = FXMLLoader.load(getClass().getResource("/PersonOverview.fxml"));
-            
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(personOverview);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void showPersonOverview() throws IOException {
+        // Load person overview.
+        AnchorPane personOverview = FXMLLoader.load(getClass().getResource("/PersonOverview.fxml"));
+        
+        // Set person overview into the center of root layout.
+        rootLayout.setCenter(personOverview);
     }
     
 	/**
 	 * Returns the main stage.
 	 * @return
 	 */
+	
 	public Stage getPrimaryStage() {
 		return primaryStage;
 	}
-
-    public static void main(String[] args) {
-        launch(args);
-    }
+	public BorderPane getRootLayout() {
+		return rootLayout;
+	}
 }

@@ -4,10 +4,29 @@
 package it.gradle.tamplate;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
 
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+import org.junit.Assert;
+
+
+@RunWith(JavaFxJUnit4ClassRunner.class)
 public class DummyTest {
+	Main main;
     @Test public void testDummy() {
-        assertTrue(true);
-    }
+        main = new Main();
+		try {
+			main.start(new Stage());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Assert.assertNotNull(main.getPrimaryStage());
+		Assert.assertNotNull(main.getRootLayout());
+
+	}
+        
 }
