@@ -9,6 +9,7 @@ services:
 before_install:
  - sudo apt update
  - sudo apt install openjfx
+ - sudo apt install at-spi2-core
  - chmod +x gradlew   # add exe permission to graglew
  - export DISPLAY=:99.0
 
