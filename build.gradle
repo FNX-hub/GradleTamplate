@@ -44,3 +44,8 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'    
 }
+
+jacocoTestReport {
+    // we are forcing the execution of 'test' before the execution of 'jacocoTestReport'
+    dependsOn test
+}
