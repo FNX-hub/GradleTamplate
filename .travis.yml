@@ -6,6 +6,7 @@ install: skip
 
 
 before_install:
+ - sudo apt install openjfx
  - chmod +x gradlew   # add exe permission to graglew
  
 # good for performances
