@@ -52,13 +52,6 @@ jacoco {
     reportsDir = file("$buildDir/customJacocoReportDir")
 }
 
-test {
-    jacoco {
-        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
-        classDumpDir = file("$buildDir/jacoco/classpathdumps")
-    }
-}
-
 jacocoTestReport {
     reports {
         xml.enabled false
@@ -67,5 +60,9 @@ jacocoTestReport {
     }
 }
 
-
-
+test {
+    jacoco {
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+        classDumpDir = file("$buildDir/jacoco/classpathdumps")
+    }
+}
